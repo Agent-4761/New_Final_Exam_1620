@@ -13,6 +13,14 @@ function mode_swap(event) {
 	}
 }
 
+// moder = document.querySelector("#mode");
+
+// moder.addEventListner("submit", mode_swap);
+
+// function mode_swap(event) {
+// 	document.body.classList.toggle("light-theme");
+// }
+
 // make_form();
 // formButton = document.querySelector("#input");
 
