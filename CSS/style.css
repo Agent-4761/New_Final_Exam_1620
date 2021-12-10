@@ -1,189 +1,200 @@
 :root {
-  --navHeight:   80px;
-  --yellow:      #F9C74F;
-  --lightCoral:  #EF6E6B;
-  --apricot:     #FFD6BA;
-  --lightGreen:  #BEE3DB;
-  --darkGreen:   #527A78;
-  --white:       #FAF9F9;
-  --black:       #23262E;
-  --blueGray:    #555B6E;
-  --romanSilver: #757E95;
+	--navHeight: 80px;
+	--yellow: #f9c74f;
+	--lightCoral: #ef6e6b;
+	--apricot: #ffd6ba;
+	--lightGreen: #bee3db;
+	--darkGreen: #527a78;
+	--white: #faf9f9;
+	--black: #23262e;
+	--blueGray: #555b6e;
+	--romanSilver: #757e95;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 5px;
+	box-sizing: border-box;
 }
 
 /* notice how the default light theme colors are set by this class. */
 .light-theme {
-  --navBg:          var(--lightGreen);
-  --navLinkHoverBg: var(--white);
-  --mainBg:         var(--white);
-  --fontColor:      var(--black);
-  --navLinkColor:   var(--lightCoral);
-  --formBG:         var(--lightCoral);
-  --formInput:      var(--white);
+	--navBg: var(--lightGreen);
+	--navLinkHoverBg: var(--white);
+	--mainBg: var(--white);
+	--fontColor: var(--black);
+	--navLinkColor: var(--lightCoral);
+	--formBG: var(--lightCoral);
+	--formInput: var(--white);
+}
+
+.dark-theme {
+	--navBg: var(--darkGreen);
+	--navLinkHoverBg: var(--black);
+	--mainBg: var(--black);
+	--fontColor: var(--white);
+	--navLinkColor: var(--romanSilver);
+	--formBG: var(--blueGray);
+	--formInput: var(--black);
 }
 
 /* toggle styles begin */
 .toggle {
-  appearance: none;
-  width: 62px;
-  height: 32px;
-  display: inline-block;
-  position: relative;
-  border-radius: 50px;
-  overflow: hidden;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background-color: var(--black);
-  transition: background-color ease 0.3s;
+	appearance: none;
+	width: 62px;
+	height: 32px;
+	display: inline-block;
+	position: relative;
+	border-radius: 50px;
+	overflow: hidden;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: var(--black);
+	transition: background-color ease 0.3s;
 }
 
 .toggle:before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-  background: var(--romanSilver);
-  left: 2px;
-  top: 2px;
-  border-radius: 50%;
-  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: 2;
+	width: 28px;
+	height: 28px;
+	background: var(--romanSilver);
+	left: 2px;
+	top: 2px;
+	border-radius: 50%;
+	transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
 }
 
 .toggle:checked {
-  background-color: var(--yellow);
+	background-color: var(--yellow);
 }
 
 .toggle:checked:before {
-  left: 32px;
+	left: 32px;
 }
 /* toggle styles end */
 
 header {
-  position: sticky;
-  top: 0;
+	position: sticky;
+	top: 0;
 }
 
 nav {
-  background: var(--navBg);
-  position: relative;
+	background: var(--navBg);
+	position: relative;
 }
 
 nav ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 nav ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: var(--navHeight);
-  padding: 0 10px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: var(--navHeight);
+	padding: 0 10px;
 }
 
 nav ul li {
-  padding: 12px 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  border-radius: 4px;
-  position: relative;
+	padding: 12px 10px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	border-radius: 4px;
+	position: relative;
 }
 
 nav ul li:hover {
-  background-color: var(--navLinkHoverBg);
+	background-color: var(--navLinkHoverBg);
 }
 
 nav a {
-  font-family: Poppins sans-serif;
-  font-size: 3.2rem;
-  padding-right: 10px;
-  text-decoration: none;
-  color: var(--navLinkColor);
+	font-family: Poppins sans-serif;
+	font-size: 3.2rem;
+	padding-right: 10px;
+	text-decoration: none;
+	color: var(--navLinkColor);
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--mainBg);
-  /* the calc functin does exactly what you think it does */
-  /* in this case we are calulating the height based on viewport height */
-  /* minus the nav height, cool right! */
-  height: calc(100vh - var(--navHeight));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--mainBg);
+	/* the calc functin does exactly what you think it does */
+	/* in this case we are calulating the height based on viewport height */
+	/* minus the nav height, cool right! */
+	height: calc(100vh - var(--navHeight));
 }
 
-h1, h2 {
-  font-family: Poppins, sans-serif;
-  color: var(--fontColor);
+h1,
+h2 {
+	font-family: Poppins, sans-serif;
+	color: var(--fontColor);
 }
 
 h1 {
-  font-size: 8rem;
+	font-size: 8rem;
 }
 
 h2 {
-  font-size: 8rem;
+	font-size: 8rem;
 }
 
 .myForm {
-  display: flex;
-  background-color: var(--formBG);
-  font-family: Poppins, sans-serif;
-  border-radius: 8px;
-  padding: 1.8rem;
+	display: flex;
+	background-color: var(--formBG);
+	font-family: Poppins, sans-serif;
+	border-radius: 8px;
+	padding: 1.8rem;
 }
 
 label {
-  font-size: 1.8rem;
-  color: var(--fontColor);
+	font-size: 1.8rem;
+	color: var(--fontColor);
 }
 
 .message {
-  display: flex;
-  flex-direction: column;
-  order: 2;
+	display: flex;
+	flex-direction: column;
+	order: 2;
 }
 
 .message > textarea {
- flex: 1; 
- min-width: 45rem;
- font-size: 1.8rem;
+	flex: 1;
+	min-width: 45rem;
+	font-size: 1.8rem;
 }
 
 .contact {
-  flex: 1; 
-  order: 1;
-  margin-right: 2em; 
+	flex: 1;
+	order: 1;
+	margin-right: 2em;
 }
 
 .contact input {
-  width: 100%;
+	width: 100%;
 }
 
-input[type=text]:focus {
-  border: none;
-  outline: none;
+input[type="text"]:focus {
+	border: none;
+	outline: none;
 }
 
 .contact input,
 .contact button {
-  padding: 1em;
-  margin-bottom: 1em;
-  border: none;
-  font-size: 1.8rem;
+	padding: 1em;
+	margin-bottom: 1em;
+	border: none;
+	font-size: 1.8rem;
 }
 
 .contact button {
- background: var(--darkGreen);
- color: var(--white);
+	background: var(--darkGreen);
+	color: var(--white);
 }
